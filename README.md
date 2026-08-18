@@ -5,7 +5,7 @@
 ### AI-Powered Navigation-Error Recovery for Semiconductor Wafer Inspection
 
 > **SEMICON India 2026 Hackathon — Applied Materials Challenge**  
-> Team **VisionForge**
+> Team **OpenEpoch**
 
 [![Python](https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.7-EE4C2C?logo=pytorch&logoColor=white)](https://pytorch.org/)
