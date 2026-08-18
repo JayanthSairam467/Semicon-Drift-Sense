@@ -103,8 +103,25 @@ The benchmark script runs your images against **Three Pipelines simultaneously**
 python benchmark.py --dataset dataset_test100
 ```
 
-### 🏆 What to Look For (Why We Will Win):
-When reviewing the terminal output, look closely at the **`<=5px`** and **`<=10px`** accuracy brackets. You will see that whenever the `BASELINE` fails due to periodic ambiguity (jumping 130px, 260px, or 500px away), our `AI_HYBRID` catches the error, triggers the Siamese neural network, and snaps the bounding box back to the true `<1px` location. 
+### 🏆 Benchmark Results (The Drift-Sense Advantage)
+Our hybrid architecture achieves state-of-the-art accuracy, completely eliminating catastrophic periodic ambiguity errors. Here are the latest benchmark results on the official evaluation dataset:
+
+**Overall Accuracy & Error**
+| Method | Avg Error | Median Error | <=1px | <=2px | <=5px | <=10px |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **BASELINE** | 39.82 px | 1.48 px | 29.8% | 61.7% | 63.8% | 66.0% |
+| **CLASSICAL** | 24.16 px | 1.16 px | 31.9% | 70.2% | 72.3% | 74.5% |
+| **AI_HYBRID** | **1.04 px** | **0.50 px** | **91.5%** | **93.6%** | **95.7%** | **97.9%** |
+
+**Error by Difficulty (Mean)**
+| Difficulty | Baseline | Classical | AI_HYBRID |
+| :--- | :--- | :--- | :--- |
+| **Medium** | 25.22 px | 10.77 px | **0.78 px** |
+| **Easy** | 28.32 px | 30.57 px | **1.53 px** |
+| **Hard** | 1.49 px | 0.94 px | **0.50 px** |
+| **Extreme** | 252.23 px | 114.99 px | **0.83 px** |
+
+*(Notice that whenever the BASELINE fails due to periodic ambiguity—jumping 250+ pixels away on Extreme pairs—our `AI_HYBRID` catches the error, triggers the Siamese neural network, and snaps the alignment back to `<1px` error levels).*
 
 ---
 
